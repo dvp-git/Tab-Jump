@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Tabs Manager",
+  "name": "Tab-Jumper",
   "version": "1.0",
   "description": "Easily navigate and view your history of opened tabs",
   "permissions": ["tabs", "storage", "activeTab"],

@@ -1,2 +1,3 @@
-# tabs-manager
-A chrome extension for easily navigating to multiple tabs through search box.
+# tab-jump
+
+A chrome extension for easily navigating to tabs through a search box.

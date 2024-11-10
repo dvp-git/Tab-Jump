@@ -10,22 +10,30 @@ const fetchAndLogTabs = async () => {
   searchInput.addEventListener("input", (e) => {
     const searchTerm = e.target.value.toLowerCase();
     //
-    console.log(chrome.tabs);
-    console.log(e.target.value);
+    // console.log(chrome.tabs);
+    // console.log(e.target.value);
     listContainer.innerHTML = "";
     tabs.forEach((tab) => {
       if (
         tab.title.toLowerCase().includes(searchTerm) ||
         tab.url.toLowerCase().includes(searchTerm)
       ) {
-        const tabElement = document.createElement("div");
+        const tabElement = document.createElement("li");
+        tabElement.classList.add("list-item");
+        tabElement.id = tab.id;
         tabElement.textContent = `${tab.title} `;
-        tabElement.addEventListener("click", function () {
-          chrome.tabs.update(tab.id, { active: true });
-        });
         listContainer.appendChild(tabElement);
       }
     });
+  });
+
+  //   const tabElementClicked = chrome.tabs.update(tab.id, { active: true });
+  listContainer.addEventListener("click", (e) => {
+    console.log(`Event attached on ${e.currentTarget.id}`);
+    console.log(
+      `Clicked element ${e.target.className} ${e.target.id} ${e.target.textContent}`
+    );
+    chrome.tabs.update(Number(e.target.id), { active: true });
   });
 };
 
