@@ -1,0 +1,28 @@
+body {
+    width: 400px;
+    height: 600px;
+}
+
+#search-box {
+    width: 80%;
+    padding: 0 2px 0 2px;
+    height: 2rem;
+}
+
+
+#tab-list {
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;;
+}
+.list-item {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+.list-item:hover {
+    background-color: #0ea5e9;
+    font-weight: bold;
+}
