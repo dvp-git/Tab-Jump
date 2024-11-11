@@ -46,7 +46,11 @@ body {
     border-bottom: 1px solid #ddd;
     cursor: pointer;
 }
-.list-item:hover {
+
+
+.list-item:hover, 
+.list-item:focus {
     background-color: #0ea5e9;
     font-weight: bold;
 }
+
