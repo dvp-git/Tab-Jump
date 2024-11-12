@@ -3,7 +3,7 @@
   "name": "Tab-Jump",
   "version": "1.0",
   "description": "Easily navigate and view your history of opened tabs",
-  "permissions": ["tabs", "storage", "activeTab", "contextMenus"],
+  "permissions": ["tabs", "storage", "activeTab", "contextMenus", "downloads"],
   "action": {
     "default_popup": "./popup/popup.html",
     "default_icon": {
