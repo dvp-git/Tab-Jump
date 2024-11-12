@@ -2,6 +2,8 @@
 
 A Chrome extension for easily navigating to multiple tabs through a search box.
 
+![image](https://github.com/user-attachments/assets/8f6cfa58-01ce-42c0-8af2-fae1438805f7)
+
 ## Features
 
 - Quickly search and navigate to open tabs.
