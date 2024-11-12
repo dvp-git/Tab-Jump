@@ -11,7 +11,6 @@ A Chrome extension for easily navigating to multiple tabs through a search box.
 ## Upcoming Features
 - History of websites actually read by user.
 - Analytics of time spent on each tab to understand user reading habits.
-- 
 
 ## Installation
 
