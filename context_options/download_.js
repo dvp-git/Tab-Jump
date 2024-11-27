@@ -52,9 +52,17 @@ document.addEventListener("DOMContentLoaded", async () => {
           <h1>Your Saved Tabs</h1>
           <ul>
             ${openedTabs
+              .filter(
+                (tab) =>
+                  !tab.url.startsWith("chrome://") &&
+                  !tab.url.startsWith("edge://") &&
+                  !tab.url.startsWith("extension://")
+              )
               .map((tab) => {
-                const { title, url } = tab;
-                return `<li className="list-item"><a href="${url}" target="_blank">${title}</a></li>`;
+                {
+                  const { title, url } = tab;
+                  return `<li className="list-item"><a href="${url}" target="_blank">${title}</a></li>`;
+                }
               })
               .join("")}
           </ul>
@@ -62,23 +70,28 @@ document.addEventListener("DOMContentLoaded", async () => {
         </html>
       `;
     // HACK: Store the file as a Blob and html file
-    const blob = new Blob([htmlContent], { type: "text/html" });
-    const url = URL.createObjectURL(blob);
+    if (htmlContent.includes(`className="list-item">`)) {
+      const blob = new Blob([htmlContent], { type: "text/html" });
+      const url = URL.createObjectURL(blob);
 
-    chrome.downloads.download(
-      {
-        url: url,
-        filename: "all_tabs.html",
-        saveAs: false,
-      },
-      function (downloadId) {
-        // console.log("I am downloading " + downloadId);
-        URL.revokeObjectURL(url);
-        // Close window after download
-        window.close();
-      }
-    );
+      chrome.downloads.download(
+        {
+          url: url,
+          filename: "all_tabs.html",
+          saveAs: false,
+        },
+        function (downloadId) {
+          // console.log("I am downloading " + downloadId);
+          URL.revokeObjectURL(url);
+          // Close window after download
+          window.close();
+        }
+      );
+    } else {
+      alert("No tabs are open");
+      window.close();
+    }
   } catch (error) {
-    // console.log("Error exporting tabs: ", error);
+    console.log("Error exporting tabs: ", error);
   }
 });
