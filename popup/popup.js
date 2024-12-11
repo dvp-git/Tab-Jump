@@ -1,4 +1,4 @@
-// This script should present a search box  to search the tabsand populate according to searchTerm
+// This script should present a search box  to search the tabs and populate according to searchTerm
 // NOTE: Function to fetch open Tabs
 const fetchAndLogTabs = async () => {
   let searchInput = document.getElementById("search-box");

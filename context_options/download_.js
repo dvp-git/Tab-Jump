@@ -207,7 +207,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     } else {
       console.log("No tabs to export");
       alert("No tabs are open");
-      // window.close();
+      window.close();
     }
   } catch (error) {
     console.log("Error exporting tabs: ", error);
