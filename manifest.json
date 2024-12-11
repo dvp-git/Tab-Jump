@@ -13,6 +13,15 @@
       "128": "images/icon-128.png"
     }
   },
+  "commands": {
+    "open-popup": {
+      "suggested_key": {
+        "default": "Alt+T",
+        "mac": "Command+Shift+T"
+      },
+      "description": "Open the Tab-Jump popup"
+    }
+  },
   "background": {
     "service_worker": "./service-worker/service-worker.js",
     "type": "module"
